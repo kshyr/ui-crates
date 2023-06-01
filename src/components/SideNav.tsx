@@ -14,7 +14,7 @@ export default function SideNav() {
         </li>
         {user && (
           <li>
-            <Link href={`/profiles/${user.id}`}>Profile</Link>
+            <Link href={`/u/${user.id}`}>Profile</Link>
           </li>
         )}
         {user ? <Logout /> : <Login />}
