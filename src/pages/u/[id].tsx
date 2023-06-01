@@ -13,6 +13,7 @@ import Link from "next/link";
 import InfiniteFeed from "@components/InfiniteFeed";
 import { Button } from "@components/ui/button";
 import { useSession } from "next-auth/react";
+import Header from "@components/Header";
 
 const UserPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   id,
@@ -46,7 +47,7 @@ const UserPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       <Head>
         <title>{`${profile.name}`}</title>
       </Head>
-      <Link href="..">Back</Link>
+      <Header title={`${profile.name}'s Profile`} isNested />
       <FollowButton
         userId={id}
         isLoading={toggleFollow.isLoading}

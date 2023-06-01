@@ -19,6 +19,7 @@ import { freeCodeCampDark } from "@codesandbox/sandpack-themes";
 import { autocompletion, completionKeymap } from "@codemirror/autocomplete";
 import { useState } from "react";
 import { useTheme } from "next-themes";
+import { MdCode, MdCodeOff } from "react-icons/md";
 
 type InfiniteFeedProps = {
   isLoading: boolean;
@@ -61,7 +62,7 @@ export default function InfiniteFeed({
       hasMore={hasMore}
       loader={"Loading........."}
     >
-      <ul className="m-12 flex h-full flex-col items-center justify-center gap-4 ">
+      <ul className="flex h-full w-full flex-col items-center justify-center gap-4 ">
         {posts.map((post) => {
           return <PostCard key={post.id} post={post} />;
         })}
@@ -122,7 +123,7 @@ function PostCard({ post }: { post: Post }) {
   }
 
   return (
-    <Card key={id} className="w-full border bg-card shadow-lg">
+    <Card key={id} className="w-1/2 border bg-card shadow-lg">
       <CardHeader className="flex flex-row items-center py-3">
         <div className="flex items-center gap-2">
           <Avatar className="h-6 w-6">
@@ -163,16 +164,21 @@ function PostCard({ post }: { post: Post }) {
               skipEval: true,
             }}
           >
-            <SandpackLayout>
+            <SandpackLayout style={{ aspectRatio: "1 / 1", borderRadius: 8 }}>
               {showEditor && (
                 <SandpackCodeEditor
+                  style={{
+                    height: "100%",
+                    position: "absolute",
+                    zIndex: 1,
+                  }}
                   closableTabs
                   extensions={[autocompletion()]}
                   /* @ts-expect-error KeyBinding[] */
                   extensionsKeymap={[completionKeymap]}
                 />
               )}
-              <SandpackPreview />
+              <SandpackPreview style={{ height: "100%" }} />
             </SandpackLayout>
           </SandpackProvider>
         </p>
@@ -189,7 +195,7 @@ function PostCard({ post }: { post: Post }) {
           className="ml-4"
           onClick={() => setShowEditor(!showEditor)}
         >
-          {">"}
+          {showEditor ? <MdCodeOff /> : <MdCode />}
         </Button>
       </CardFooter>
     </Card>

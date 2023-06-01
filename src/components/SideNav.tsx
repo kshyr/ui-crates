@@ -10,11 +10,15 @@ export default function SideNav() {
     <nav className="sticky top-0 px-2 py-4">
       <ul className="flex flex-col gap-3">
         <li>
-          <Link href="/">Home</Link>
+          <Link href="/" className="font-bold">
+            Home
+          </Link>
         </li>
         {user && (
           <li>
-            <Link href={`/u/${user.id}`}>Profile</Link>
+            <Link href={`/u/${user.id}`} className="font-bold">
+              Profile
+            </Link>
           </li>
         )}
         {user ? <Logout /> : <Login />}
