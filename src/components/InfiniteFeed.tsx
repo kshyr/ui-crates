@@ -178,7 +178,12 @@ function PostCard({ post }: { post: Post }) {
                   extensionsKeymap={[completionKeymap]}
                 />
               )}
-              <SandpackPreview style={{ height: "100%" }} />
+              <SandpackPreview
+                style={{ height: "100%" }}
+                showOpenInCodeSandbox={false}
+                showRefreshButton={false}
+                showRestartButton={false}
+              />
             </SandpackLayout>
           </SandpackProvider>
         </p>
