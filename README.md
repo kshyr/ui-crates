@@ -10,13 +10,10 @@ There are 2 options I can think of:
 UI-crates uses Sandpack to run Node.js in a separate container for each post, and loads them in infinite feed. In terms of UI, post is just a rendered view of their JS code, with the button to toggle source code view. In that sense, it's a perfect balance between Instagram and CodeSandbox (at least for me).
 
 Currently UI-crates supports only HTML/CSS with Tailwind, as I'm figuring out how to make React and other frameworks to load in a fair amount of time for UX.
-<br>
 
 <img src="https://github.com/kshyr/ui-crates/assets/60661103/050d3af4-c1ab-4094-b9ac-29fd14199dbd" style="width:400px;height:400px;"/>
 
-<br>
-
-Tech:
+#### Tech:
 - [Next.js](https://nextjs.org): Routing, SSR, StaticPaths, tRPC adapter
 - [NextAuth.js](https://next-auth.js.org): OAuth
 - [Prisma](https://prisma.io): ORM
