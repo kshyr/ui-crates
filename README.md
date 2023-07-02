@@ -1,6 +1,7 @@
 # UI-crates
+
 ### Social media for sharing UI elements
----
+
 Sometimes I feel like sharing some fancy animated button I've made or even a little tag component that people can reuse. 
 
 There are 2 options I can think of:
