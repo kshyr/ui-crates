@@ -3,9 +3,10 @@
  * for Docker builds.
  */
 await import("./src/env.mjs");
+import removeImports from "next-remove-imports";
 
 /** @type {import("next").NextConfig} */
-const config = {
+const config = removeImports({
   reactStrictMode: true,
   images: { domains: ["cdn.discordapp.com"] },
   /**
@@ -18,5 +19,7 @@ const config = {
     locales: ["en"],
     defaultLocale: "en",
   },
-};
+  experimental: { esmExternals: true },
+});
+
 export default config;

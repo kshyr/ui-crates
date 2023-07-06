@@ -6,6 +6,7 @@ import type { FormEvent } from "react";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import Link from "next/link";
+import PostCreationDialog from "./PostCreationDialog";
 
 export default function PostCreationForm() {
   const session = useSession();
@@ -82,7 +83,7 @@ function Form({ image }: { image: string }) {
       >
         {session.data?.user && (
           <Link href={`/u/${session.data.user.id}`}>
-            <Image src={image} width={40} height={40} alt="userImg" />
+            {/* <Image src={image} width={40} height={40} alt="userImg" /> */}
           </Link>
         )}
         <div className="flex gap-4">
@@ -97,6 +98,7 @@ function Form({ image }: { image: string }) {
           Post
         </Button>
       </form>
+      <PostCreationDialog />
     </div>
   );
 }

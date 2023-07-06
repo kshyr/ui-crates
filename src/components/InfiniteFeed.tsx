@@ -142,19 +142,7 @@ function PostCard({ post }: { post: Post }) {
         <p className="whitespace-pre-wrap">
           <SandpackProvider
             files={{
-              "/index.html": `<!doctype html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class=${theme === "dark" ? "bg-[#2a2a40]" : "bg-[#fafafa]"}>
-  <h1 class="text-3xl font-bold underline text-transparent bg-clip-text bg-gradient-to-tr from-cyan-600 to-blue-50 min-h-screen flex justify-center items-center">
-    ${post.content}
-  </h1>
-</body>
-</html>`,
+              "/index.html": post.content,
             }}
             theme={freeCodeCampDark}
             template="static"
