@@ -160,6 +160,8 @@ function PostCard({ post }: { post: Post }) {
                     position: "absolute",
                     zIndex: 1,
                   }}
+                  readOnly
+                  showReadOnly={false}
                   closableTabs
                   extensions={[autocompletion()]}
                   /* @ts-expect-error KeyBinding[] */
