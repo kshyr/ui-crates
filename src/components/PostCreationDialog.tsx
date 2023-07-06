@@ -73,8 +73,8 @@ export default function PostCreationDialog() {
 
   return (
     <Dialog>
-      <DialogTrigger>
-        <Button>New</Button>
+      <DialogTrigger className="absolute right-4 top-4 h-10 w-20 rounded-lg bg-primary text-lg font-bold text-primary-foreground">
+        New
       </DialogTrigger>
       <DialogContent className="min-w-[33rem] md:min-w-[45rem] lg:min-w-[65rem]">
         <SandpackProvider

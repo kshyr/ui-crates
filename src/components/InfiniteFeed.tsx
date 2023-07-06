@@ -10,7 +10,6 @@ import { cn } from "../lib/utils";
 import { api } from "@utils/api";
 import {
   SandpackCodeEditor,
-  SandpackFileExplorer,
   SandpackLayout,
   SandpackPreview,
   SandpackProvider,
@@ -56,7 +55,7 @@ export default function InfiniteFeed({
 
   return (
     <InfiniteScroll
-      className="flex-1"
+      className="relative flex-1"
       dataLength={posts.length}
       next={fetchNewPosts}
       hasMore={hasMore}
