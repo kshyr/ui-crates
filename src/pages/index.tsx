@@ -1,8 +1,6 @@
 import Header from "@components/Header";
 import InfiniteFeed from "@components/InfiniteFeed";
 import PostCreationDialog from "@components/PostCreationDialog";
-import PostCreationForm from "@components/PostCreationForm";
-import { Button } from "@components/ui/button";
 import { api } from "@utils/api";
 import { type NextPage } from "next";
 
